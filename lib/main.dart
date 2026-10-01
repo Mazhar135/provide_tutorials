@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provide_tutorials/home_screen.dart';
-import 'package:provide_tutorials/provider/count_provider.dart';
-import 'package:provide_tutorials/screen/count_example.dart';
-import 'package:provide_tutorials/stateful_widget_screen.dart';
-import 'package:provide_tutorials/why_provider.dart';
+import 'package:provide_tutorials/provider/example_provider_one.dart';
+import 'package:provide_tutorials/screen/example_one.dart'; // check your path
 import 'package:provider/provider.dart';
 
 void main() {
@@ -13,22 +10,16 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // The provider must be ABOVE MaterialApp so every screen can find it
     return ChangeNotifierProvider(
-
-        create: (_) => CountProvider(),
-      child:  MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+      create: (_) => ExampleProviderOne(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(primarySwatch: Colors.blue),
+        home: const ExampleOne(),
       ),
-      home: CountExample(),
-    ),
-
     );
-
   }
 }
