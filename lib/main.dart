@@ -6,6 +6,7 @@ import 'package:provide_tutorials/provider/favourite_provider.dart';
 import 'package:provide_tutorials/provider/theme_change_provider.dart';
 import 'package:provide_tutorials/screen/dark_theme.dart';
 import 'package:provide_tutorials/screen/example_one.dart'; // check your path
+import 'package:provide_tutorials/screen/value_notify_listner.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -60,7 +61,7 @@ class MyApp extends StatelessWidget {
             )
           ),
 
-          home: const DarkThemeScreen(),
+          home:  NotifyListnerScreen(),
         );
       }),
     );
