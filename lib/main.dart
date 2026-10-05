@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provide_tutorials/favorite/favorite_screen.dart';
+import 'package:provide_tutorials/provider/auth_provider.dart';
 import 'package:provide_tutorials/provider/count_provider.dart';
 import 'package:provide_tutorials/provider/example_provider_one.dart';
 import 'package:provide_tutorials/provider/favourite_provider.dart';
 import 'package:provide_tutorials/provider/theme_change_provider.dart';
 import 'package:provide_tutorials/screen/dark_theme.dart';
 import 'package:provide_tutorials/screen/example_one.dart'; // check your path
+import 'package:provide_tutorials/screen/login_screen.dart';
 import 'package:provide_tutorials/screen/value_notify_listner.dart';
 import 'package:provider/provider.dart';
 
@@ -23,6 +25,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ExampleProviderOne()),
         ChangeNotifierProvider(create: (_) => FavouriteItemProvider()),
         ChangeNotifierProvider(create: (_) => ThemeChanger()),
+        ChangeNotifierProvider(create: (_) =>  AuthProvider()),
       ],
       child: Builder(builder: (context) {
         // Rebuilds MaterialApp when themeMode changes
@@ -61,7 +64,7 @@ class MyApp extends StatelessWidget {
             )
           ),
 
-          home:  NotifyListnerScreen(),
+          home:  LoginScreen(),
         );
       }),
     );
